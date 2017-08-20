@@ -5,7 +5,7 @@
  Primera aplicacion de **React-Native** para android, luego estare haciendo la version para IOS,esto es solo un ejemplo, para aprenderlo a usar.
 
   Para iniciar la aplicacion es necesario tener el **Emulador de Android** o un Movil android que el compilador logre detectar.
- 
+
 #### Instalacion
  Primero clonamos el repositorio:
 ``` git clone https://github.com/theorlan2/FoodApp-React-Native.git```
