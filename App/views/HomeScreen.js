@@ -94,8 +94,8 @@ IndexRecipe.indice = this.carouc.currentIndex
   </View>
 <View style={CarouselStyles.contDetallesCaroucel} >
  <View style={CarouselStyles.contTituloContDtC} >
-   <Text style={CarouselStyles.tituloContDtC} >{ArrayRecetas[this.state.index].nombre}</Text>
-   <Text style={CarouselStyles.vistasContDtC} >{ArrayRecetas[this.state.index].views+' / '+ArrayRecetas[this.state.index].likes+' Likes'}</Text>
+   <Text style={[CarouselStyles.tituloContDtC,{color:ArrayRecetas[IndexRecipe.indice].color}]} >{ArrayRecetas[this.state.index].nombre}</Text>
+   <Text style={CarouselStyles.vistasContDtC} >{ArrayRecetas[this.state.index].views+' Views / '+ArrayRecetas[this.state.index].likes+' Likes'}</Text>
     <View style={CarouselStyles.contStarts} >
 {/*  Ejemplo de Starts */}
       <Image
@@ -105,7 +105,8 @@ IndexRecipe.indice = this.carouc.currentIndex
     <TouchableOpacity
       onPress={()=>this.props.navigation.navigate('Detalles')}
       style={CarouselStyles.btnVerRecipe} >
-      <LinearGradient colors={['#ffdf7f', '#ffba59']} style={CarouselStyles.btnVerRecipeGrd}  >
+      {/* Se obtienen los colores del objeto ArrayRecetas y se aplican al cambio de indice */}
+      <LinearGradient colors={[ArrayRecetas[this.state.index].gradients[0], ArrayRecetas[this.state.index].gradients[1]]} style={CarouselStyles.btnVerRecipeGrd}  >
       <Text style={CarouselStyles.btnVerRecipeText} >View Recipe</Text>
       </LinearGradient>
     </TouchableOpacity>

@@ -86,6 +86,12 @@ contpesoTextList: {
 subTextList:{
   color:'#999',
   fontSize:14
+},
+comentariosText:{
+  marginTop:10,
+  fontSize:18,
+  color:'#444',
+  textAlign:'center'
 }
 
 

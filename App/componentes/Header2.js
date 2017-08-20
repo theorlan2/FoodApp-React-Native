@@ -63,7 +63,7 @@ render() {
   return (
     <View style={h2Styles.contenedor} >
 
-<LinearGradient colors={['#ffd073', '#ffb54c']} style={h2Styles.contenedorH}  >
+<LinearGradient colors={[this.props.colorHeader[0], this.props.colorHeader[1]]} style={h2Styles.contenedorH}  >
 <View style={h2Styles.contenedorHTop} >
 
     <View style={h2Styles.vContenedor} >

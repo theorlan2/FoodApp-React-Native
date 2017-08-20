@@ -107,10 +107,11 @@ go = (page) => {
     return (
       <View style={styles.container}>
         <StatusBar
-            backgroundColor='#ffd073'
-            barStyle="light-content"
+            backgroundColor={ArrayRecetas[IndexRecipe.indice].statusbar[0]}
+            barStyle={ArrayRecetas[IndexRecipe.indice].statusbar[1]}
           />
 <Header2
+  colorHeader={ArrayRecetas[IndexRecipe.indice].gradients}
   style={styles.Header2}
   ref={ (header) => {this.header = header }}
   navegacion={this.props.navigation}
@@ -155,7 +156,7 @@ go = (page) => {
 {/* Contenido Tab 3  */}
 <View style={styles.DetallesTab3} >
   <ScrollView style={styles.scrollCont} >
-  <Text >{this.state.page}</Text>
+  <Text style={styles.comentariosText} >No Hay Comentarios</Text>
 
 </ScrollView>
 </View>
@@ -163,7 +164,7 @@ go = (page) => {
 </ViewPagerAndroid>
 
 </View>
-<BtnLike />
+<BtnLike  colorsGradients={ArrayRecetas[IndexRecipe.indice].gradients} />
       </View>
     );
   }

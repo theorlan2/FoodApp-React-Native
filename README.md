@@ -1,8 +1,11 @@
 # FoodApp React-Native
-
+Imagen 1:
 <img src="/Imagenes-App/imagen-home.png" width="300" />
 
- Primera aplicacion de **React-Native** para android, luego estare haciendo la version para IOS,esto es solo un ejemplo, para aprenderlo a usar.
+Imagen 2:
+<img src="/Imagenes-App/imagen-ingredientes2.png" width="300" />
+
+Mi Segunda aplicacion de **React-Native** para android,esto es solo un ejemplo, para aprender a usar React Native.
 
   Para iniciar la aplicacion es necesario tener el **Emulador de Android** o un Movil android que el compilador logre detectar.
 

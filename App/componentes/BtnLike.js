@@ -26,7 +26,7 @@ constructor(props){
 
 render() {
   return (
-   <LinearGradient colors={['#ffd073', '#ffb54c']}
+   <LinearGradient colors={[this.props.colorsGradients[0], this.props.colorsGradients[1]]}
         style={styles.contenedorBtn}
         >
 <TouchableOpacity >
@@ -37,7 +37,7 @@ render() {
   fill="#fff3d9"
 />
 </Svg>
-</TouchableOpacity>          
+</TouchableOpacity>
 </LinearGradient>
 
    )// fin Return

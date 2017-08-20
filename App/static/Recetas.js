@@ -1,9 +1,12 @@
 export const ArrayRecetas = [
   {
-'nombre':'BLACK PEPPER STEAK',
+'nombre':'Black pepper steak',
  'imagen':'food-1.jpg',
-'views':'3862',
-'likes':'839',
+'views':'30',
+'likes':'10', 
+'color':'#ff980d', // Color Texto 
+'gradients':['#ffd073','#ffb54c'],
+'statusbar':['#ffd073','light-content'],
  'ingredientes':[
 { 'id':1,
 'icon':'steak',
@@ -55,8 +58,11 @@ export const ArrayRecetas = [
   {
 'nombre':'Strawberry Cake',
  'imagen':'food-2.png',
-'views':'3862',
-'likes':'839',
+'views':'306',
+'likes':'42',
+'color':'#9e725c',
+'gradients':['#ff7faa','#ff668c'],
+'statusbar':['#ff7faa','light-content'],
  'ingredientes':[
 { 'id':1,
 'icon':'flour',
