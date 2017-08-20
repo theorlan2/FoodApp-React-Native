@@ -1,6 +1,6 @@
 # FoodApp React-Native
 
-![Aplicacion Corriendo](/Imagenes-App/imagen-home.png)
+<img src="/Imagenes-App/imagen-home.png" width="300" />
 
  Primera aplicacion de **React-Native** para android, luego estare haciendo la version para IOS,esto es solo un ejemplo, para aprenderlo a usar.
 
