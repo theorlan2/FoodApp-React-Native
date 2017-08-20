@@ -1,6 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * FOOD APP React Native
  * @flow
  */
 
@@ -13,16 +12,24 @@ import {
   Image,
   ScrollView,
   ViewPagerAndroid,
+  FlatList,
+  TouchableOpacity,
   View
 } from 'react-native';
 
 import  Header2  from '../componentes/Header2'
 import  BtnLike  from '../componentes/BtnLike'
-
-
+// Lista de Recetas
+import { ArrayRecetas } from '../static/Recetas'
 
 import  styles  from '../styles/index.styles'
+import { ListIcons }  from '../static/Icons'
 
+// Obtiene el Indice del Recipe Selecionado
+import {IndexRecipe} from '../static/indiceRecipe'
+
+
+const extractKey = ({id}) => id
 export default class DetailScreen extends Component {
 constructor(props){
   super(props)
@@ -34,53 +41,128 @@ constructor(props){
 
   this.viewPager1 =  this.viewPager;
   this.go=this.go.bind(this)
+//  this.renderItem=this.renderItem.bind(this)
 }
 
-
-go = (page) => {
-    if (this.state.animationsAreEnabled) {
-      this.viewPager.setPage(page);
-    } else {
-      this.viewPager.setPageWithoutAnimation(page);
-    }
-
-    this.setState({page});
+// Obtiene la posicion del ViewPager y se la asigna al tab
+onPageSelected = (e) => {
+    this.setState({page: e.nativeEvent.position});
+this.header.goTab(e.nativeEvent.position);
   };
+
+// PagerView ir a esa pagina
+go = (page) => {
+     this.viewPager.setPage(page);
+    this.setState({page});
+ };
+
+
+// Render de items del Flatlist Ingredientes
+  renderItemIngredientes = ({item}) => {
+    return (
+      <TouchableOpacity style={styles.rowIngredients} key={item.id} >
+        <View style={styles.contImageList} >
+         <Image
+           source={ListIcons[item.icon]} />
+         </View>
+  <View style={styles.contTextList} >
+    <Text style={styles.ingTextList} >
+        {item.nombre}
+      </Text>
+    </View>
+
+      <View style={styles.contpesoTextList} >
+     <Text style={styles.subTextList} >
+         {item.peso}
+       </Text>
+     </View>
+     </TouchableOpacity>
+    )
+  }
+
+// Render de items del Flatlist Steps
+  renderItemSteps = ({item}) => {
+    return (
+      <TouchableOpacity style={styles.row} key={item.id} >
+ <View style={styles.contImageList} >
+  <Image
+    source={ListIcons[item.icon]} />
+  </View>
+
+  <View style={styles.contTextList} >
+    <Text style={styles.TextList} >
+        {item.nombre}
+      </Text>
+
+     <Text style={styles.subTextList} >
+         {item.detalles}
+       </Text>
+      </View>
+     </TouchableOpacity>
+    )
+  }
+
 
   render() {
     return (
       <View style={styles.container}>
         <StatusBar
             backgroundColor='#ffd073'
-            barStyle="dark-content"
+            barStyle="light-content"
           />
-<Header2 navegacion={this.props.navigation} page={this.state.page} go={this.go} />
-<ScrollView style={styles.scrollCont} >
+<Header2
+  style={styles.Header2}
+  ref={ (header) => {this.header = header }}
+  navegacion={this.props.navigation}
+  page={this.state.page}
+  go={this.go}
+   />
 
-<View
-style={styles.contenedorDetalles}
-   >
-     <ViewPagerAndroid
-       style={styles.viewPager}
-       initialPage={this.state.tabActiva}
-       ref={viewPager => { this.viewPager = viewPager; }}
-       >
-<View style={styles.DetallesTab1} >
-  <Text >{this.state.tabActiva}</Text>
+
+<View style={styles.contenedorDetalles}  >
+
+   <ViewPagerAndroid
+     style={styles.viewPager}
+     initialPage={this.state.tabActiva}
+     ref={viewPager => { this.viewPager = viewPager; }}
+     onPageSelected={this.onPageSelected}
+     >
+
+   {/* Contenido Tab 1  */}
+<View style={styles.DetallesTab1,[{position:'relative'}]} >
+  <ScrollView style={styles.scrollCont} >
+ <FlatList
+   style={styles.ContList}
+   data={ArrayRecetas[IndexRecipe.indice].ingredientes}
+   renderItem={this.renderItemIngredientes}
+   keyExtractor={extractKey}
+ />
+
+</ScrollView>
 </View>
+{/* Contenido Tab 2  */}
 <View style={styles.DetallesTab2} >
-  <Text >2</Text>
+  <ScrollView style={styles.scrollCont} >
+  <FlatList
+    style={styles.ContList}
+    data={ArrayRecetas[IndexRecipe.indice].Steps}
+    renderItem={this.renderItemSteps}
+    keyExtractor={extractKey}
+  />
+</ScrollView>
 
 </View>
+{/* Contenido Tab 3  */}
 <View style={styles.DetallesTab3} >
-  <Text >3</Text>
+  <ScrollView style={styles.scrollCont} >
+  <Text >{this.state.page}</Text>
 
+</ScrollView>
 </View>
 
 </ViewPagerAndroid>
 
 </View>
-</ScrollView>
 <BtnLike />
       </View>
     );

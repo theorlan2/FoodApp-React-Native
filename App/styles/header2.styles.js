@@ -35,26 +35,21 @@ tabsCont:{
 flexDirection:'row',
 paddingVertical:15
 },
-tabsList:{
-flex:1,
+svgCont:{
 justifyContent:'center',
 alignItems:'center',
-opacity:0.7
+opacity:0.3
 },
-tabsListActive:{
-flex:1,
-justifyContent:'center',
-alignItems:'center'
-},
-
 svgTabs:{
   width:40,
-  height:40
+  height:40,
+  alignSelf:'center'
 },
 nomTab:{
   fontSize:16,
   color:'#fff'
 },
+// Corte en el Tab Activa
 contImitTabAct:{
   flex:1,
   maxWidth:'33.3%',
@@ -63,11 +58,11 @@ contImitTabAct:{
 contComit:{
   flex:1,
   flexDirection:'row',
-  justifyContent:'center'
+  justifyContent:'flex-start'
 },
 svgComit:{
-  top:-3.5,
+  top:-3.61,
   alignSelf:'center'
 }
-
+// <------
 })

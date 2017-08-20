@@ -21,7 +21,6 @@ import  DetailScreen  from './App/views/DetailScreen'
 import { StackNavigator } from 'react-navigation';
 
 
-
 const FoodApp = StackNavigator({
   Home:{
     screen:HomeScreen,
