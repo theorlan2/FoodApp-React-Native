@@ -1,4 +1,7 @@
 # FoodApp React-Native
+Diseño inspirado de: https://dribbble.com/shots/3390946-Food-App
+
+
 Imagen 1:
 <img src="/Imagenes-App/imagen-home.png" width="300" />
 
