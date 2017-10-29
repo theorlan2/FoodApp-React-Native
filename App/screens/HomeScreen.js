@@ -5,8 +5,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   StatusBar,
   ScrollView,
@@ -18,20 +16,20 @@ import {
 import Carousel from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
 
-
 // Estilos
 import  styles  from '../styles/index.styles'
 import  CarouselStyles  from '../styles/Caroucel.styles'
 import { sliderWidth,itemWidth } from '../styles/Caroucel.styles'
-// Elementos Staticos
-import { ArrayRecetas } from '../static/Recetas'
+
+// Lista de Recetas
+import { ArrayRecetas } from '../config/Recetas'
+
 // Componentes
-import  Header  from '../componentes/Header'
-import CarouselFoodHome from '../componentes/CaroucelFoodHome';
+import  Header  from '../componentes/HeaderHome/Header'
+import CarouselFoodHome from '../componentes/CaroucelHome/CaroucelFoodHome';
 
-import {IndexRecipe} from '../static/indiceRecipe'
-
-
+// Indice de la Receta actual
+import {IndexRecipe} from '../config/indiceRecipe'
 
 export default class HomeScreen extends Component {
 
@@ -56,7 +54,6 @@ CurrentItem(){
  })
 IndexRecipe.indice = this.carouc.currentIndex
 }
-
 
   render() {
     return (

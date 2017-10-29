@@ -1,11 +1,8 @@
-
 // @flow
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Image,
   Text,
   TouchableOpacity,
   View
@@ -14,7 +11,7 @@ import {
 import Svg,{  Path,G,Circle } from 'react-native-svg';
 import LinearGradient from 'react-native-linear-gradient';
 
-import h2Styles from '../styles/header2.styles'
+import h2Styles from './styles'
 
 var tab1 = 0,tab2 = 0,tab3 = 0;
 

@@ -3,22 +3,18 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Image,
   Text,
   TouchableOpacity,
   View
 } from 'react-native';
 
-import Svg,{  Path,G,Circle } from 'react-native-svg';
-import LinearGradient from 'react-native-linear-gradient';
-import styles from '../styles/Caroucel.styles'
+import styles from '../../styles/Caroucel.styles'
 
 const ListImages = {
-'food-1.jpg': require('../static/img/food-1.jpg'),
-'food-2.png': require('../static/img/food-2.png'),
-'food-3.png': require('../static/img/food-3.png'),
+'food-1.jpg': require('../../static/img/food-1.jpg'),
+'food-2.png': require('../../static/img/food-2.png'),
+'food-3.png': require('../../static/img/food-3.png'),
 }
 
 
@@ -30,7 +26,6 @@ constructor(props){
 
 
  render(){
-
 return (
   <TouchableOpacity
             activeOpacity={1}
@@ -49,9 +44,5 @@ return (
 
           </TouchableOpacity>
   )
-}
-
-
-
-
+ }
 }

@@ -4,34 +4,8 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  StatusBar,
-  Image,
-  ScrollView,
-  View
-} from 'react-native';
-
-import  HomeScreen  from './App/views/HomeScreen'
-import  DetailScreen  from './App/views/DetailScreen'
-
-import { StackNavigator } from 'react-navigation';
-
-
-const FoodApp = StackNavigator({
-  Home:{
-    screen:HomeScreen,
-  },
-  Detalles:{
-    screen:DetailScreen,
-  },
-},
-  {  headerMode: 'none' }
-)
-
-
+import { AppRegistry } from 'react-native';
+// Rutas definidas en: config/routes
+import  FoodApp  from './App/config/routes'
 
 AppRegistry.registerComponent('FoodApp', () => FoodApp);

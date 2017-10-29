@@ -5,8 +5,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   StatusBar,
   Image,
@@ -17,16 +15,16 @@ import {
   View
 } from 'react-native';
 
-import  Header2  from '../componentes/Header2'
-import  BtnLike  from '../componentes/BtnLike'
+import  Header2  from '../componentes/HeaderRecipe/Header'
+import  BtnLike  from '../componentes/BtnLike/BtnLike'
 // Lista de Recetas
-import { ArrayRecetas } from '../static/Recetas'
+import {ArrayRecetas} from '../config/Recetas'
 
 import  styles  from '../styles/index.styles'
-import { ListIcons }  from '../static/Icons'
+import {ListIcons}  from '../static/Icons'
 
 // Obtiene el Indice del Recipe Selecionado
-import {IndexRecipe} from '../static/indiceRecipe'
+import {IndexRecipe} from '../config/indiceRecipe'
 
 
 const extractKey = ({id}) => id
@@ -169,7 +167,3 @@ go = (page) => {
     );
   }
 }
-
-
-
-///AppRegistry.registerComponent('FoodApp', () => FoodApp);

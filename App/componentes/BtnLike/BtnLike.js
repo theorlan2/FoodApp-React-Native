@@ -1,22 +1,12 @@
-
 // @flow
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import React, { Component } from 'react'
+import { TouchableOpacity } from 'react-native'
 
+import Svg,{  Path } from 'react-native-svg'
+import LinearGradient from 'react-native-linear-gradient'
 
-
-import Svg,{  Path } from 'react-native-svg';
-import LinearGradient from 'react-native-linear-gradient';
-
-import styles from '../styles/index.styles'
-
+import styles from './styles'
 
 export default class BtnLike extends Component {
 
@@ -26,8 +16,9 @@ constructor(props){
 
 render() {
   return (
-   <LinearGradient colors={[this.props.colorsGradients[0], this.props.colorsGradients[1]]}
-        style={styles.contenedorBtn}
+   <LinearGradient
+      colors={[this.props.colorsGradients[0], this.props.colorsGradients[1]]}
+      style={styles.contenedorBtn}
         >
 <TouchableOpacity >
 
