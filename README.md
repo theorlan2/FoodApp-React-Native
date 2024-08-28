@@ -1,33 +1,50 @@
-# FoodApp React-Native
-Diseño inspirado de: https://dribbble.com/shots/3390946-Food-App
+# Welcome to your Expo app 👋
 
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-Imagen 1:
-<img src="/Imagenes-App/imagen-home.png" width="300" />
+## Get started
 
-Imagen 2:
-<img src="/Imagenes-App/imagen-ingredientes2.png" width="300" />
+1. Install dependencies
 
-Mi Segunda aplicacion de **React-Native** para android,esto es solo un ejemplo, para aprender a usar React Native.
+   ```bash
+   npm install
+   ```
 
-  Para iniciar la aplicacion es necesario tener el **Emulador de Android** o un Movil android que el compilador logre detectar.
+2. Start the app
 
-#### Instalacion
- Primero clonamos el repositorio:
-``` git clone https://github.com/theorlan2/FoodApp-React-Native.git```
+   ```bash
+    npx expo start
+   ```
 
-Luego de clonar el repositorio,entramos en el directorio     
+In the output, you'll find options to open the app in a
 
-``` cd FoodApp-React-Native ```
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-Una vez dentro del directorio, procedemos a instalar las dependencias en npm:
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-``` npm install ```
+## Get a fresh project
 
-Luego de terminar la instalacion de dependencias ya podemos iniciar la plicacion:
+When you're ready, run:
 
-``` react-native run-android ```
+```bash
+npm run reset-project
+```
 
-**Nota:** Antes de iniciar la aplicacion debes tener iniciado el Emulador Android O tener conectado un Movil para que sea detectado por el compilador.
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-En la carpeta **Imagenes-App** hay imagenes de la Aplicacion corriendo en el Emulador.
+## Learn more
+
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
