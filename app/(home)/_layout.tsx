@@ -15,8 +15,8 @@ export default function HomeLayout() {
         headerTitleStyle: {},
       }}
     >
-      <Stack.Screen name="index" options={{ title: "Inicio" }} />
-      <Stack.Screen name="details/[id]" />
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="details" options={{ title: "Details Recipe" }} />
     </Stack>
   );
 }

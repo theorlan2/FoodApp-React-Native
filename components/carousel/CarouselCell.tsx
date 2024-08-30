@@ -1,5 +1,6 @@
 import React from "react";
-import { Image, Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
+import { Image } from "expo-image";
 
 import { useCarouselCalculationsHook } from "@/hooks/useCarouselWidthAndHeight";
 
@@ -29,15 +30,10 @@ const CarouselCell = ({ image }: Props) => {
       height: slideHeight,
     },
   });
-  const IMAGE_URL = "http://192.168.5.80:6834/";
-  console.log("image: ", `${IMAGE_URL}${image}?token=3c18f2`);
   return (
     <Pressable style={styles.slideInnerContainer}>
       <View style={styles.imageContainer}>
-        <Image
-          style={{ width: "100%", height: "100%" }}
-          source={{ uri: `${IMAGE_URL}${image}?token=3c18f2` }}
-        />
+        <Image style={{ width: "100%", height: "100%" }} source={`${image}`} />
       </View>
     </Pressable>
   );

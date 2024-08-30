@@ -8,30 +8,23 @@ import { useCarouselCalculationsHook } from "@/hooks/useCarouselWidthAndHeight";
 import { RecipeI } from "@/types/Recipe";
 
 type Props = {
-  firstItemIndex: number;
+  setIndex: (index: number) => void;
   data: RecipeI[];
 };
 
-const CarouselRecipes = ({ data, firstItemIndex }: Props) => {
+const CarouselRecipes = ({ data, setIndex }: Props) => {
   const { itemWidth, sliderWidth } = useCarouselCalculationsHook();
   const carouselRef = useRef<Carousel<RecipeI>>(null);
-  const [indexRecipe, setIndex] = useState(0);
-  const CurrentItem = () => {
-    if (
-      carouselRef &&
-      carouselRef.current &&
-      carouselRef.current.currentIndex
-    ) {
-      setIndex(carouselRef.current.currentIndex);
-      // save the indexRecipe
-    }
+
+  const CurrentItem = (index: number) => {
+    setIndex(index);
   };
 
   return (
     <Carousel<RecipeI>
       sliderWidth={sliderWidth}
       itemWidth={itemWidth}
-      firstItem={firstItemIndex}
+      firstItem={0}
       inactiveSlideScale={0.94}
       inactiveSlideOpacity={1}
       enableMomentum={false}
@@ -39,11 +32,9 @@ const CarouselRecipes = ({ data, firstItemIndex }: Props) => {
       contentContainerCustomStyle={styles.sliderContainer}
       showsHorizontalScrollIndicator={false}
       ref={(ref) => (carouselRef.current = ref)}
-      onScroll={CurrentItem}
-      onLayout={CurrentItem}
       removeClippedSubviews={false}
       data={data}
-      style={{}}
+      onSnapToItem={CurrentItem}
       renderItem={(item) => <CarouselCell image={item.item.image} />}
     ></Carousel>
   );

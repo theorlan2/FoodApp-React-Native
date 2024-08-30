@@ -1,29 +1,24 @@
-import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import React, { useState } from "react";
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import { recipeList } from "@/constants/RecipesList";
+import React, { useContext, useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Rating } from "react-native-ratings";
+
 import CarouselRecipes from "@/components/carousel/CarrouselRecipes";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
+import { RecipesContext } from "@/context/useRecipesContext";
 
 export default function HomeScreen() {
-  const [indexRecipe, setIndexRecipe] = useState(0);
-  const [recipe, setRecipe] = useState(recipeList[indexRecipe]);
+  const { recipe, recipes, setRecipeByIndex } = useContext(RecipesContext);
+
+  function ratingCompleted() {}
 
   return (
     <ThemedView style={styles.container}>
       <ScrollView style={styles.scrollCont}>
         <View style={styles.detailsContainer}>
-          <CarouselRecipes data={recipeList} firstItemIndex={indexRecipe} />
+          <CarouselRecipes data={recipes} setIndex={setRecipeByIndex} />
         </View>
         <View style={styles.contDetallesCaroucel}>
           <View style={styles.contTituloContDtC}>
@@ -31,32 +26,30 @@ export default function HomeScreen() {
               {recipe.name}
             </ThemedText>
 
-            <ThemedText style={styles.vistasContDtC}>
+            <ThemedText style={styles.textDetailsRecipe}>
               {`${recipe.views} Views /  ${recipe.likes} Likes`}
             </ThemedText>
             <View style={styles.contStarts}>
-              {/* Ejemplo de Starts */}
-              <Image source={require("@/assets/images/starts.png")} />
+              <Rating
+                imageSize={24}
+                onFinishRating={ratingCompleted}
+                style={{ paddingVertical: 5 }}
+              />
             </View>
             <Link
               href={{
-                pathname: "/details/[id]",
-                params: { id: "2" },
+                pathname: "/(home)/details/[id]",
+                params: { id: 1 },
               }}
             >
-              <Pressable
-                style={styles.btnViewRecipe}
-                onPress={() => {
-                  console.log("example");
-                }}
-              >
+              <View style={styles.btnViewRecipe}>
                 <LinearGradient
-                  colors={[recipe.gradients[0], recipe.gradients[1]]}
+                  colors={recipe.gradients}
                   style={styles.btnViewRecipeGrd}
                 >
-                  <Text> Open Recipe</Text>
+                  <Text style={{ color: "white" }}> Open Recipe</Text>
                 </LinearGradient>
-              </Pressable>
+              </View>
             </Link>
           </View>
         </View>
@@ -98,7 +91,7 @@ const styles = StyleSheet.create({
     color: "#ff8e00",
     fontSize: 20,
   },
-  vistasContDtC: {
+  textDetailsRecipe: {
     fontSize: 16,
     opacity: 0.5,
   },
@@ -112,11 +105,12 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     paddingHorizontal: 50,
     paddingVertical: 13,
-    marginTop: 20,
     elevation: 3,
   },
   btnVerRecipeText: {
     fontSize: 18,
   },
-  contStarts: {},
+  contStarts: {
+    marginVertical: 10,
+  },
 });
