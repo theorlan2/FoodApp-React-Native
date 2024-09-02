@@ -15,7 +15,7 @@ export const recipeList = [
       { id: 1, icon: "steak", name: "Fresh steak", peso: "100g" },
       { id: 2, icon: "onion", name: "Onion", peso: "50g" },
     ],
-    Steps: [
+    steps: [
       {
         id: 1,
         icon: "steak",
@@ -53,6 +53,28 @@ export const recipeList = [
         details: "Add a little lemon juice & heat 2 mins.",
       },
     ],
+    comments: [
+      {
+        id: 1,
+        userName: "Jose",
+        comment: "Great post!",
+      },
+      {
+        id: 2,
+        userName: "Ana",
+        comment: "I agree with your points.",
+      },
+      {
+        id: 3,
+        userName: "Pedro",
+        comment: "Nice article, keep it up!",
+      },
+      {
+        id: 4,
+        userName: "Maria",
+        comment: "This is a very informative read.",
+      },
+    ],
   },
 
   {
@@ -76,7 +98,7 @@ export const recipeList = [
 
       { id: 6, icon: "milk", name: "Pure Milk", peso: "50ml" },
     ],
-    Steps: [
+    steps: [
       {
         id: 1,
         icon: "flour",
@@ -112,6 +134,28 @@ export const recipeList = [
         icon: "milk",
         name: "Pure Milk",
         details: "Add a little lemon juice & heat 2 mins.",
+      },
+    ],
+    comments: [
+      {
+        id: 1,
+        userName: "Jose",
+        comment: "Great post!",
+      },
+      {
+        id: 2,
+        userName: "Ana",
+        comment: "I agree with your points.",
+      },
+      {
+        id: 3,
+        userName: "Pedro",
+        comment: "Nice article, keep it up!",
+      },
+      {
+        id: 4,
+        userName: "Maria",
+        comment: "This is a very informative read.",
       },
     ],
   },
@@ -137,7 +181,7 @@ export const recipeList = [
 
       { id: 6, icon: "milk", name: "Pure Milk", peso: "50ml" },
     ],
-    Steps: [
+    steps: [
       {
         id: 1,
         icon: "flour",
@@ -173,6 +217,28 @@ export const recipeList = [
         icon: "milk",
         name: "Pure Milk",
         details: "Add a little lemon juice & heat 2 mins.",
+      },
+    ],
+    comments: [
+      {
+        id: 1,
+        userName: "Jose",
+        comment: "Great post!",
+      },
+      {
+        id: 2,
+        userName: "Ana",
+        comment: "I agree with your points.",
+      },
+      {
+        id: 3,
+        userName: "Pedro",
+        comment: "Nice article, keep it up!",
+      },
+      {
+        id: 4,
+        userName: "Maria",
+        comment: "This is a very informative read.",
       },
     ],
   },
@@ -197,7 +263,7 @@ export const recipeList = [
 
       { id: 6, icon: "milk", name: "Pure Milk", peso: "50ml" },
     ],
-    Steps: [
+    steps: [
       {
         id: 1,
         icon: "flour",
@@ -235,5 +301,42 @@ export const recipeList = [
         details: "Add a little lemon juice & heat 2 mins.",
       },
     ],
+    comments: [
+      {
+        id: 1,
+        userName: "Jose",
+        comment: "Great post!",
+      },
+      {
+        id: 2,
+        userName: "Ana",
+        comment: "I agree with your points.",
+      },
+      {
+        id: 3,
+        userName: "Pedro",
+        comment: "Nice article, keep it up!",
+      },
+      {
+        id: 4,
+        userName: "Maria",
+        comment: "This is a very informative read.",
+      },
+    ],
   },
 ] as unknown as RecipeI[];
+
+export const ingredientsIcons = {
+  egg: require("@/assets/images/ingredients-icons/egg.jpg"),
+  butter: require("@/assets/images/ingredients-icons/butter.jpg"),
+  blackPepper: require("@/assets/images/ingredients-icons/black-pepper.jpg"),
+  flour: require("@/assets/images/ingredients-icons/flour.jpg"),
+  lemon: require("@/assets/images/ingredients-icons/lemon.jpg"),
+  milk: require("@/assets/images/ingredients-icons/milk.jpg"),
+  onion: require("@/assets/images/ingredients-icons/onion.jpg"),
+  redWine: require("@/assets/images/ingredients-icons/red-wine.jpg"),
+  steak: require("@/assets/images/ingredients-icons/steak.jpg"),
+  strawBerry: require("@/assets/images/ingredients-icons/strawBerry.jpg"),
+  vegetableOil: require("@/assets/images/ingredients-icons/vegetableOil.jpg"),
+  wSugar: require("@/assets/images/ingredients-icons/wSugar.jpg"),
+};

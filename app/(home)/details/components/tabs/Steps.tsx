@@ -8,15 +8,21 @@ import { RecipesContext } from "@/context/useRecipesContext";
 import StepItem from "../StepItem";
 
 const StepsTab = () => {
-  const { recipe } = useContext(RecipesContext);
+  const { recipe, recipeIngredientsIcons } = useContext(RecipesContext);
   return (
     <View style={styles.containerTab}>
       <ScrollView style={styles.scrollCont}>
         <FlashList
           style={styles.ContList}
-          data={recipe.Steps}
+          data={recipe.steps}
           estimatedItemSize={10}
-          renderItem={({ item }) => <StepItem icon="" element={item} />}
+          renderItem={({ item }) => (
+            <StepItem
+              icon={item.icon}
+              element={item}
+              icons={recipeIngredientsIcons}
+            />
+          )}
           keyExtractor={(item) => item.id.toString()}
         />
       </ScrollView>

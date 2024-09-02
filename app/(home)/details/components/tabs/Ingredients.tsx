@@ -8,8 +8,7 @@ import { RecipesContext } from "@/context/useRecipesContext";
 import IngredientItem from "../IngredientItem";
 
 const IngredientsTab = () => {
-  const { recipe } = useContext(RecipesContext);
-  console.log("ingredients", recipe.ingredientes);
+  const { recipe, recipeIngredientsIcons } = useContext(RecipesContext);
 
   return (
     <View style={{ ...styles.containerTab }}>
@@ -17,7 +16,13 @@ const IngredientsTab = () => {
         <FlashList
           style={styles.ContList}
           data={recipe.ingredientes}
-          renderItem={(item) => <IngredientItem element={item} icon={""} />}
+          renderItem={(item) => (
+            <IngredientItem
+              element={item.item}
+              icon={item.item.icon}
+              icons={recipeIngredientsIcons}
+            />
+          )}
           estimatedItemSize={5}
           keyExtractor={(item) => item.id.toString()}
         />

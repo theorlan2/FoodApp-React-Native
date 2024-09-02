@@ -11,6 +11,13 @@ interface RecipeStepI {
   name: string;
   details: string;
 }
+
+interface CommentI {
+  id: number;
+  userName: string;
+  comment: string;
+}
+
 export interface RecipeI {
   name: string;
   image: string;
@@ -20,5 +27,6 @@ export interface RecipeI {
   gradients: string[];
   statusbar: [string, "light-content"];
   ingredientes: IngredientI[];
-  Steps: RecipeStepI[];
+  steps: RecipeStepI[];
+  comments: CommentI[];
 }

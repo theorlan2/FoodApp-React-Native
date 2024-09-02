@@ -5,13 +5,14 @@ import { RecipeStepI } from "@/types/Recipe";
 type Props = {
   element: RecipeStepI;
   icon: string;
+  icons: any;
 };
 
-const StepItem = ({ element: { name, details }, icon }: Props) => {
+const StepItem = ({ element: { name, details }, icon, icons }: Props) => {
   return (
     <Pressable style={styles.row}>
       <View style={styles.containerImage}>
-        <Image source={{ uri: icon }} />
+        <Image source={icons[icon]} />
       </View>
 
       <View style={styles.containerDescription}>

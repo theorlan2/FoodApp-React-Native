@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Rating } from "react-native-ratings";
 
@@ -16,42 +16,38 @@ export default function HomeScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <ScrollView style={styles.scrollCont}>
-        <View style={styles.detailsContainer}>
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.carouselContainer}>
           <CarouselRecipes data={recipes} setIndex={setRecipeByIndex} />
         </View>
-        <View style={styles.contDetallesCaroucel}>
-          <View style={styles.contTituloContDtC}>
-            <ThemedText style={[styles.tituloContDtC]}>
-              {recipe.name}
-            </ThemedText>
+        <View style={styles.containerDetaillsCaroucel}>
+          <ThemedText style={[styles.titleRecipe]}>{recipe.name}</ThemedText>
 
-            <ThemedText style={styles.textDetailsRecipe}>
-              {`${recipe.views} Views /  ${recipe.likes} Likes`}
-            </ThemedText>
-            <View style={styles.contStarts}>
-              <Rating
-                imageSize={24}
-                onFinishRating={ratingCompleted}
-                style={{ paddingVertical: 5 }}
-              />
-            </View>
-            <Link
-              href={{
-                pathname: "/(home)/details/[id]",
-                params: { id: 1 },
-              }}
-            >
-              <View style={styles.btnViewRecipe}>
-                <LinearGradient
-                  colors={recipe.gradients}
-                  style={styles.btnViewRecipeGrd}
-                >
-                  <Text style={{ color: "white" }}> Open Recipe</Text>
-                </LinearGradient>
-              </View>
-            </Link>
+          <ThemedText style={styles.detailsRecipe}>
+            {`${recipe.views} Views /  ${recipe.likes} Likes`}
+          </ThemedText>
+          <View style={styles.containerRating}>
+            <Rating
+              imageSize={24}
+              onFinishRating={ratingCompleted}
+              style={{ paddingVertical: 5 }}
+            />
           </View>
+          <Link
+            href={{
+              pathname: "/(home)/details/[id]",
+              params: { id: 1 },
+            }}
+          >
+            <View style={styles.containerButtonOpenRecipe}>
+              <LinearGradient
+                colors={recipe.gradients}
+                style={styles.gradientButton}
+              >
+                <Text style={{ color: "white" }}>Open Recipe</Text>
+              </LinearGradient>
+            </View>
+          </Link>
         </View>
       </ScrollView>
     </ThemedView>
@@ -62,55 +58,41 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  detailsContainer: {
+  carouselContainer: {
     flex: 1,
   },
-  Header2: {
+  scrollContainer: {
     flex: 1,
   },
-  scrollCont: {
-    flex: 1,
-  },
-  viewPager: {
-    flex: 1,
-    paddingVertical: 20,
-  },
-  DetallesTab1: {
-    flex: 1,
-    position: "relative",
-  },
-  contDetallesCaroucel: {
-    flex: 1,
-  },
-  contTituloContDtC: {
+  containerDetaillsCaroucel: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  tituloContDtC: {
+  titleRecipe: {
     color: "#ff8e00",
     fontSize: 20,
   },
-  textDetailsRecipe: {
+  detailsRecipe: {
     fontSize: 16,
     opacity: 0.5,
   },
-  btnViewRecipe: {
+  containerButtonOpenRecipe: {
     flex: 1,
     paddingHorizontal: 50,
     paddingVertical: 13,
   },
-  btnViewRecipeGrd: {
+  gradientButton: {
     alignItems: "center",
     borderRadius: 50,
     paddingHorizontal: 50,
     paddingVertical: 13,
     elevation: 3,
   },
-  btnVerRecipeText: {
+  buttonOpenRecipe: {
     fontSize: 18,
   },
-  contStarts: {
+  containerRating: {
     marginVertical: 10,
   },
 });

@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
-import StepsIcon from "@/assets/images/svg-icons/steps.svg";
-import IngredientsIcon from "@/assets/images/svg-icons/ingredients.svg";
-import CommentsIcon from "@/assets/images/svg-icons/comments.svg";
+
+import { TabView, SceneMap } from "react-native-tab-view";
 
 import { RecipesContext } from "@/context/useRecipesContext";
 
-import { TabView, SceneMap } from "react-native-tab-view";
 import GradientTabBar from "./components/TabBar";
 import StepsTab from "./components/tabs/Steps";
 import IngredientsTab from "./components/tabs/Ingredients";
 import CommentsTab from "./components/tabs/Comments";
+
+import StepsIcon from "@/assets/images/svg-icons/steps.svg";
+import IngredientsIcon from "@/assets/images/svg-icons/ingredients.svg";
+import CommentsIcon from "@/assets/images/svg-icons/comments.svg";
 
 const DetailsRecipeScreen = () => {
   const { recipe } = useContext(RecipesContext);
