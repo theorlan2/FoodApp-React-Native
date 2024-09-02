@@ -11,8 +11,9 @@ export default function HomeLayout() {
         headerStyle: {
           backgroundColor: Colors[colorScheme ?? "light"].background,
         },
-        headerTintColor: Colors[colorScheme ?? "light"].text,
+        headerTintColor: Colors[colorScheme ?? "light"].textTitle,
         headerTitleStyle: {},
+        headerShadowVisible: false,
       }}
     >
       <Stack.Screen name="index" options={{ title: "Home" }} />

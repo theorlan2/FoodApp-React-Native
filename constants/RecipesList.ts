@@ -250,7 +250,7 @@ export const recipeList = [
     views: "306",
     likes: "42",
     color: "#9e725c",
-    gradients: ["#594EDC", "#60489C"],
+    gradients: ["#CEB43B", "#4B952E"],
     statusbar: ["#594EDC", "light-content"],
     ingredientes: [
       { id: 1, icon: "flour", name: "High-quality Flour", peso: "100g" },

@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
+import { View } from "react-native";
 
 import { TabView, SceneMap } from "react-native-tab-view";
 
 import { RecipesContext } from "@/context/useRecipesContext";
 
-import GradientTabBar from "./components/TabBar";
+import CustomTabBar from "./components/TabBar";
 import StepsTab from "./components/tabs/Steps";
 import IngredientsTab from "./components/tabs/Ingredients";
 import CommentsTab from "./components/tabs/Comments";
+import LikeButton from "./components/LikeBtn";
 
 import StepsIcon from "@/assets/images/svg-icons/steps.svg";
 import IngredientsIcon from "@/assets/images/svg-icons/ingredients.svg";
@@ -43,20 +45,24 @@ const DetailsRecipeScreen = () => {
   const _handleIndexChange = (index: number) => setIndex(index);
 
   return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={_renderScene}
-      renderTabBar={(props) => (
-        <GradientTabBar
-          gradients={recipe.gradients}
-          setIndex={setIndex}
-          index={index}
-          icons={routes.map((item) => item.iconTab)}
-          {...props}
-        />
-      )}
-      onIndexChange={_handleIndexChange}
-    />
+    <View style={{ flex: 1 }}>
+      <TabView
+        navigationState={{ index, routes }}
+        renderScene={_renderScene}
+        renderTabBar={(props) => (
+          <CustomTabBar
+            key={props.navigationState.index}
+            gradients={recipe.gradients}
+            setIndex={setIndex}
+            index={index}
+            icons={routes.map((item) => item.iconTab)}
+            {...props}
+          />
+        )}
+        onIndexChange={_handleIndexChange}
+      />
+      <LikeButton colors={recipe.gradients} />
+    </View>
   );
 };
 

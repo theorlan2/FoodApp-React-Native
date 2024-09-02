@@ -22,14 +22,13 @@ const CarouselRecipes = ({ data, setIndex }: Props) => {
 
   return (
     <Carousel<RecipeI>
+      slideStyle={{ flex: 1 }}
       sliderWidth={sliderWidth}
       itemWidth={itemWidth}
       firstItem={0}
       inactiveSlideScale={0.94}
       inactiveSlideOpacity={1}
       enableMomentum={false}
-      // containerCustomStyle={styles.slider}
-      contentContainerCustomStyle={styles.sliderContainer}
       showsHorizontalScrollIndicator={false}
       ref={(ref) => (carouselRef.current = ref)}
       removeClippedSubviews={false}
@@ -39,10 +38,5 @@ const CarouselRecipes = ({ data, setIndex }: Props) => {
     ></Carousel>
   );
 };
-const styles = StyleSheet.create({
-  slider: {
-    marginTop: 20,
-  },
-  sliderContainer: {},
-});
+const styles = StyleSheet.create({});
 export default CarouselRecipes;

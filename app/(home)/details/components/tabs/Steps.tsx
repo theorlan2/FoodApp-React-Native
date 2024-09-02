@@ -13,7 +13,6 @@ const StepsTab = () => {
     <View style={styles.containerTab}>
       <ScrollView style={styles.scrollCont}>
         <FlashList
-          style={styles.ContList}
           data={recipe.steps}
           estimatedItemSize={10}
           renderItem={({ item }) => (
@@ -35,10 +34,6 @@ const styles = StyleSheet.create({
   },
   scrollCont: {
     flex: 1,
-  },
-  ContList: {
-    flex: 1,
-    backgroundColor: "green",
   },
 });
 

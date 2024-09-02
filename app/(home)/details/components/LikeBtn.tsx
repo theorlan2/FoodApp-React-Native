@@ -1,26 +1,26 @@
-import { LinearGradient } from "expo-linear-gradient";
-
 import React from "react";
 import { Pressable, StyleSheet } from "react-native";
 
+import { LinearGradient } from "expo-linear-gradient";
+
+import HeartIcon from "@/assets/images/svg-icons/heart-icon.svg";
+
 type Props = {
-  colorGradientStart: string;
-  colorGradientEnd: string;
+  colors: string[];
 };
 
-const LikeButton = ({ colorGradientStart, colorGradientEnd }: Props) => {
+const LikeButton = ({ colors }: Props) => {
   return (
-    <LinearGradient
-      colors={[colorGradientStart, colorGradientEnd]}
-      style={styles.contenedorBtn}
-    >
-      <Pressable></Pressable>
+    <LinearGradient colors={colors} style={styles.containerButoon}>
+      <Pressable style={styles.buttonGradient}>
+        <HeartIcon width={24} height={24} />
+      </Pressable>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  contenedorBtn: {
+  containerButoon: {
     position: "absolute",
     bottom: 16,
     right: 16,
@@ -30,12 +30,15 @@ const styles = StyleSheet.create({
     elevation: 8,
     zIndex: 20,
     marginBottom: 10,
+    borderWidth: 2,
+    borderColor: "white",
   },
-  btnSvg: {
-    width: 28,
-    height: 28,
-    marginTop: 14,
-    margin: 12,
+  buttonGradient: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 1,
+    shadowOffset: { width: 1, height: 1 },
   },
 });
 

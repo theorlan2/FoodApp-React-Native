@@ -1,16 +1,24 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import React, { useContext } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useColorScheme,
+} from "react-native";
 import { Rating } from "react-native-ratings";
 
 import CarouselRecipes from "@/components/carousel/CarrouselRecipes";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { RecipesContext } from "@/context/useRecipesContext";
+import { Colors } from "@/constants/Colors";
 
 export default function HomeScreen() {
   const { recipe, recipes, setRecipeByIndex } = useContext(RecipesContext);
+  const colorScheme = useColorScheme();
 
   function ratingCompleted() {}
 
@@ -30,7 +38,9 @@ export default function HomeScreen() {
             <Rating
               imageSize={24}
               onFinishRating={ratingCompleted}
-              style={{ paddingVertical: 5 }}
+              ratingColor={Colors[colorScheme ?? "light"].text}
+              ratingBackgroundColor={Colors[colorScheme ?? "light"].background}
+              style={{ paddingVertical: 5, backgroundColor: "transparent" }}
             />
           </View>
           <Link

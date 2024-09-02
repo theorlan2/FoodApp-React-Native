@@ -1,6 +1,12 @@
-import { LinearGradient } from "expo-linear-gradient";
+import { Colors } from "@/constants/Colors";
 import { ReactElement, useState } from "react";
-import { Animated, View, StyleSheet, Pressable } from "react-native";
+import {
+  Animated,
+  View,
+  StyleSheet,
+  Pressable,
+  useColorScheme,
+} from "react-native";
 import {
   NavigationState,
   Route,
@@ -13,14 +19,14 @@ type Props = {
   gradients: string[];
   setIndex: (index: number) => void;
 };
-function GradientTabBar<T extends Route>({
+
+function CustomTabBar<T extends Route>({
   icons,
-  index,
   setIndex,
-  gradients,
   navigationState,
   position,
 }: SceneRendererProps & { navigationState: NavigationState<T> } & Props) {
+  const colorScheme = useColorScheme();
   const styles = StyleSheet.create({
     tabItem: {
       flex: 1,
@@ -28,17 +34,20 @@ function GradientTabBar<T extends Route>({
       gap: 2,
       justifyContent: "center",
       alignItems: "center",
+      backgroundColor: Colors[colorScheme ?? "light"].background,
+      paddingVertical: 10,
     },
     containerTabBar: {
-      paddingVertical: 10,
       flexDirection: "row",
+      elevation: 2,
+      shadowOffset: { width: 1, height: 2 },
     },
   });
 
   const inputRange = navigationState.routes.map((x, i) => i);
 
   return (
-    <LinearGradient colors={gradients} style={styles.containerTabBar}>
+    <View style={styles.containerTabBar}>
       {navigationState.routes.map((route, i) => {
         const opacity = position.interpolate({
           inputRange,
@@ -52,12 +61,20 @@ function GradientTabBar<T extends Route>({
             <Animated.View style={{ opacity }}>
               {icons[i] && icons[i]}
             </Animated.View>
-            <Animated.Text style={{ opacity }}>{route.title}</Animated.Text>
+            <Animated.Text
+              style={{
+                opacity,
+                fontWeight: "600",
+                color: Colors[colorScheme ?? "light"].textTitle,
+              }}
+            >
+              {route.title}
+            </Animated.Text>
           </Pressable>
         );
       })}
-    </LinearGradient>
+    </View>
   );
 }
 
-export default GradientTabBar;
+export default CustomTabBar;

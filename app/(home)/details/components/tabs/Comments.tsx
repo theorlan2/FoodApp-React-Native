@@ -13,7 +13,6 @@ const CommentsTab = () => {
       <ScrollView style={styles.containerScrollView}>
         {recipe.comments.length > 0 ? (
           <FlashList
-            style={styles.containerList}
             data={recipe.comments}
             estimatedItemSize={10}
             renderItem={({ item }) => <CommentItem element={item} />}
@@ -39,10 +38,6 @@ const styles = StyleSheet.create({
     color: "#444",
     fontSize: 16,
     marginVertical: 10,
-  },
-  containerList: {
-    flex: 1,
-    backgroundColor: "green",
   },
 });
 export default CommentsTab;

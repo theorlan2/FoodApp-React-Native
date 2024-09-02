@@ -14,7 +14,6 @@ const IngredientsTab = () => {
     <View style={{ ...styles.containerTab }}>
       <ScrollView style={styles.scrollCont}>
         <FlashList
-          style={styles.ContList}
           data={recipe.ingredientes}
           renderItem={(item) => (
             <IngredientItem
@@ -35,9 +34,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollCont: {
-    flex: 1,
-  },
-  ContList: {
     flex: 1,
   },
 });
