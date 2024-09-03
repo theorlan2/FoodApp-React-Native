@@ -16,11 +16,11 @@ This is a migration to Expo, from the [*original version created 7 years ago*](h
 Android
 
 <img src="/imagenes-App/new-version-home.png" width="320" alt="Screenshot new version /home for iOS">
-<img src="/imagenes-App/new-version-ingredientes.png" width="320" alt="Screenshot new version /ingredients">
+<img src="/imagenes-App/new-version-ingredients.png" width="320" alt="Screenshot new version /ingredients">
 
 IOS
 <img src="/imagenes-App/new-version-home-ios.png" width="320" alt="Screenshot IOS version /home">
-<img src="imagenes-App/new-version-ingredientes-ios.png" width="320" alt="Screenshot IOS version /home">
+<img src="imagenes-App/new-version-ingredients-ios.png" width="320" alt="Screenshot IOS version /home">
 
 
 ### Original version
