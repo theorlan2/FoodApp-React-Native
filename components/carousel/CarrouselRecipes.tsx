@@ -14,7 +14,7 @@ type Props = {
 
 const CarouselRecipes = ({ data, setIndex }: Props) => {
   const { itemWidth, sliderWidth } = useCarouselCalculationsHook();
-  const carouselRef = useRef<Carousel<RecipeI>>(null);
+  const carouselRef = useRef<Carousel<RecipeI> | null>(null);
 
   const CurrentItem = (index: number) => {
     setIndex(index);
