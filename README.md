@@ -8,24 +8,24 @@ Design inspired by: https://dribbble.com/shots/3390946-Food-App
 
 Application example for food lovers who crave delicious recipes. With a wide variety of recipes, cooking tips, and step-by-step instructions.
 
-This is a migration to Expo, from the *original version created 7 years ago*.
-
+This is a migration to Expo, from the [*original version created 7 years ago*](https://github.com/theorlan2/FoodApp-React-Native/tree/oldVersion).
 
 ## Images
 
 ### New version (more consistent with the OS)
 Android
-![Screenshot new version /home](/imagenes-App/imagen-home.png)
-![Screenshot new version /ingredients](/imagenes-App/imagen-ingredientes.png)
+
+<img src="/imagenes-App/new-version-home.png" width="320" alt="Screenshot new version /home for iOS">
+<img src="/imagenes-App/new-version-ingredientes.png" width="320" alt="Screenshot new version /ingredients">
 
 IOS
-![Screenshot IOS version /home](/imagenes-App/new-version-home-ios.png)
-![Screenshot IOS version /ingredients](/imagenes-App/imagen-ingredientes-ios.png)
+<img src="/imagenes-App/new-version-home-ios.png" width="320" alt="Screenshot IOS version /home">
+<img src="imagenes-App/new-version-ingredientes-ios.png" width="320" alt="Screenshot IOS version /home">
 
 
 ### Original version
-![Screenshot of original app /home](/Imagenes-App/imagen-home.png)
-![Screenshot of original app /ingredients](/Imagenes-App/imagen-ingredientes.png)
+<img src="imagenes-App/imagen-home.png" width="320" alt="Original app /home">
+<img src="imagenes-App/imagen-ingredientes.png" width="320" alt="Original app /ingredients">
 
 
 
